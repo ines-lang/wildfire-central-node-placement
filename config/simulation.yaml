@@ -1,0 +1,3 @@
+# Simulation settings read by wildfire_central_node_placement.paths.
+# s1_run_dir: report folder of the S1 run of the NeuralAgent network simulator (8 Nov 2026), relative to code/.
+s1_run_dir: "data/simulator/runs/eo_report_eo_layer_2026-11-08T16-00-25"

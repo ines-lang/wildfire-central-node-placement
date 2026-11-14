@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wildfire-central-node-placement"
+version = "0.1.0"
+description = "Thesis pipeline: wildfire detection latency from Earth-observation satellites (shared package wildfire_central_node_placement)"
+readme = "README.md"
+requires-python = ">=3.14"
+# pinned to the versions of the environment that produced the thesis results
+dependencies = [
+    "contextily==1.7.1",
+    "h5py==3.16.0",
+    "matplotlib==3.11.2",
+    "numpy==2.5.4",
+    "pandas==3.0.6",
+    "pyhdf==0.11.7",
+    "pyyaml==6.0.3",
+    "rasterio==1.5.2",
+    "requests==2.34.2",
+    "sgp4==2.27",
+    "shapely==2.2.0",
+    "skyfield==1.55",
+]
+
+[project.urls]
+Repository = "https://github.com/ines-lang/wildfire-central-node-placement"
+
+[project.optional-dependencies]
+test = ["pytest==9.2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

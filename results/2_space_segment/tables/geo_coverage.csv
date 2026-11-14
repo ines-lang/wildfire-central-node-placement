@@ -1,0 +1,191 @@
+mission,sub_lon_deg,site,site_name,vza_deg,status_aug2025,public_fire_product
+Meteosat-9,46.0,larouco,"Larouco, Ourense",72.0,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,molezuelas,"Molezuelas de la Carballeda, Zamora",71.1,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,oimbra,"Oimbra - A Granxa, Ourense",72.0,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,piodao,"Piodao, Arganil",71.5,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,red_canyon,"Red Canyon, WY",999.0,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,derdara,"Derdara, Chefchaouen",67.2,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",44.1,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,eastern_cape,"Eastern Cape (ZA), cluster 215",41.3,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,ghanzi,"Ghanzi, Botswana",39.2,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-9,46.0,el_questro,"El Questro / King River, WA",999.0,operational (IODC),LSA SAF FRP-PIXEL (IODC)
+Meteosat-10,0.2,larouco,"Larouco, Ourense",49.5,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,molezuelas,"Molezuelas de la Carballeda, Zamora",49.0,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,oimbra,"Oimbra - A Granxa, Ourense",49.1,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,piodao,"Piodao, Arganil",47.3,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,red_canyon,"Red Canyon, WY",999.0,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,derdara,"Derdara, Chefchaouen",41.2,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",54.9,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,eastern_cape,"Eastern Cape (ZA), cluster 215",47.2,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,ghanzi,"Ghanzi, Botswana",36.5,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+Meteosat-10,0.2,el_questro,"El Questro / King River, WA",999.0,operational at 0 deg (SEVIRI full disk since 22 Mar 2023; parallel to Meteosat-12 from Jun 2025); source of the S0 SEVIRI data,LSA SAF FRP-PIXEL (MSG-Disk)
+INSAT-3D,129.5,larouco,"Larouco, Ourense",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,oimbra,"Oimbra - A Granxa, Ourense",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,piodao,"Piodao, Arganil",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,red_canyon,"Red Canyon, WY",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,derdara,"Derdara, Chefchaouen",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,ghanzi,"Ghanzi, Botswana",999.0,end of operations,MOSDAC fire product
+INSAT-3D,129.5,el_questro,"El Questro / King River, WA",18.9,end of operations,MOSDAC fire product
+Himawari-8,140.7,larouco,"Larouco, Ourense",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,oimbra,"Oimbra - A Granxa, Ourense",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,piodao,"Piodao, Arganil",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,red_canyon,"Red Canyon, WY",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,derdara,"Derdara, Chefchaouen",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,ghanzi,"Ghanzi, Botswana",999.0,backup,JAXA Himawari wildfire (registration)
+Himawari-8,140.7,el_questro,"El Questro / King River, WA",23.6,backup,JAXA Himawari wildfire (registration)
+Meteosat-11,9.6,larouco,"Larouco, Ourense",51.8,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,molezuelas,"Molezuelas de la Carballeda, Zamora",51.2,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,oimbra,"Oimbra - A Granxa, Ourense",51.5,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,piodao,"Piodao, Arganil",49.9,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,red_canyon,"Red Canyon, WY",999.0,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,derdara,"Derdara, Chefchaouen",43.8,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",49.2,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,eastern_cape,"Eastern Cape (ZA), cluster 215",41.5,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,ghanzi,"Ghanzi, Botswana",30.7,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Meteosat-11,9.6,el_questro,"El Questro / King River, WA",999.0,operational (rapid-scan service at 9.5E since 22 Mar 2023),LSA SAF FRP-PIXEL
+Elektro-L 2,-14.7,larouco,"Larouco, Ourense",49.5,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,molezuelas,"Molezuelas de la Carballeda, Zamora",49.4,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,oimbra,"Oimbra - A Granxa, Ourense",49.0,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,piodao,"Piodao, Arganil",47.1,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,red_canyon,"Red Canyon, WY",999.0,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,derdara,"Derdara, Chefchaouen",42.0,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",65.6,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,eastern_cape,"Eastern Cape (ZA), cluster 215",58.4,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,ghanzi,"Ghanzi, Botswana",48.7,partly failed imager (to verify),none public found
+Elektro-L 2,-14.7,el_questro,"El Questro / King River, WA",999.0,partly failed imager (to verify),none public found
+INSAT-3DR,73.9,larouco,"Larouco, Ourense",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,oimbra,"Oimbra - A Granxa, Ourense",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,piodao,"Piodao, Arganil",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,red_canyon,"Red Canyon, WY",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,derdara,"Derdara, Chefchaouen",89.9,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",59.4,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,eastern_cape,"Eastern Cape (ZA), cluster 215",61.1,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,ghanzi,"Ghanzi, Botswana",64.0,operational,MOSDAC fire product (registration)
+INSAT-3DR,73.9,el_questro,"El Questro / King River, WA",63.8,operational,MOSDAC fire product (registration)
+Himawari-9,140.7,larouco,"Larouco, Ourense",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,oimbra,"Oimbra - A Granxa, Ourense",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,piodao,"Piodao, Arganil",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,red_canyon,"Red Canyon, WY",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,derdara,"Derdara, Chefchaouen",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,ghanzi,"Ghanzi, Botswana",999.0,operational,JAXA Himawari wildfire (registration)
+Himawari-9,140.7,el_questro,"El Questro / King River, WA",23.7,operational,JAXA Himawari wildfire (registration)
+GOES-16,-104.7,larouco,"Larouco, Ourense",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,oimbra,"Oimbra - A Granxa, Ourense",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,piodao,"Piodao, Arganil",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,red_canyon,"Red Canyon, WY",50.4,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,derdara,"Derdara, Chefchaouen",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,ghanzi,"Ghanzi, Botswana",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+GOES-16,-104.7,el_questro,"El Questro / King River, WA",999.0,standby since GOES-19 took over GOES-East,ABI FDC (NOAA)
+FY-4A,123.6,larouco,"Larouco, Ourense",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,oimbra,"Oimbra - A Granxa, Ourense",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,piodao,"Piodao, Arganil",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,red_canyon,"Red Canyon, WY",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,derdara,"Derdara, Chefchaouen",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,ghanzi,"Ghanzi, Botswana",999.0,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+FY-4A,123.6,el_questro,"El Questro / King River, WA",19.7,"not operational: at 123.5E since 18 Feb 2025, replaced by FY-4B (CMA, GSICS 2025)",CMA fire product (registration)
+GEO-KOMPSAT-2A,128.2,larouco,"Larouco, Ourense",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,oimbra,"Oimbra - A Granxa, Ourense",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,piodao,"Piodao, Arganil",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,red_canyon,"Red Canyon, WY",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,derdara,"Derdara, Chefchaouen",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,ghanzi,"Ghanzi, Botswana",999.0,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+GEO-KOMPSAT-2A,128.2,el_questro,"El Questro / King River, WA",18.9,"operational at 128.2E; fire product listed, operational status to verify",KMA AMI fire product
+Elektro-L 3,76.1,larouco,"Larouco, Ourense",999.0,operational,none public
+Elektro-L 3,76.1,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,operational,none public
+Elektro-L 3,76.1,oimbra,"Oimbra - A Granxa, Ourense",999.0,operational,none public
+Elektro-L 3,76.1,piodao,"Piodao, Arganil",999.0,operational,none public
+Elektro-L 3,76.1,red_canyon,"Red Canyon, WY",999.0,operational,none public
+Elektro-L 3,76.1,derdara,"Derdara, Chefchaouen",999.0,operational,none public
+Elektro-L 3,76.1,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",61.0,operational,none public
+Elektro-L 3,76.1,eastern_cape,"Eastern Cape (ZA), cluster 215",62.9,operational,none public
+Elektro-L 3,76.1,ghanzi,"Ghanzi, Botswana",66.1,operational,none public
+Elektro-L 3,76.1,el_questro,"El Questro / King River, WA",61.7,operational,none public
+FY-4B,104.6,larouco,"Larouco, Ourense",999.0,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,oimbra,"Oimbra - A Granxa, Ourense",999.0,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,piodao,"Piodao, Arganil",999.0,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,red_canyon,"Red Canyon, WY",999.0,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,derdara,"Derdara, Chefchaouen",999.0,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",83.3,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,eastern_cape,"Eastern Cape (ZA), cluster 215",87.2,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,ghanzi,"Ghanzi, Botswana",999.0,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+FY-4B,104.6,el_questro,"El Questro / King River, WA",33.2,"operational, prime at 105E since Mar 2024",CMA fire product (registration)
+GOES-18,-137.0,larouco,"Larouco, Ourense",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,oimbra,"Oimbra - A Granxa, Ourense",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,piodao,"Piodao, Arganil",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,red_canyon,"Red Canyon, WY",58.1,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,derdara,"Derdara, Chefchaouen",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,ghanzi,"Ghanzi, Botswana",999.0,operational (GOES-West),ABI FDC (NOAA)
+GOES-18,-137.0,el_questro,"El Questro / King River, WA",999.0,operational (GOES-West),ABI FDC (NOAA)
+Meteosat-12 (MTG-I1),-0.4,larouco,"Larouco, Ourense",49.4,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,molezuelas,"Molezuelas de la Carballeda, Zamora",48.9,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,oimbra,"Oimbra - A Granxa, Ourense",49.0,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,piodao,"Piodao, Arganil",47.2,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,red_canyon,"Red Canyon, WY",999.0,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,derdara,"Derdara, Chefchaouen",41.1,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",55.3,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,eastern_cape,"Eastern Cape (ZA), cluster 215",47.6,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,ghanzi,"Ghanzi, Botswana",36.9,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Meteosat-12 (MTG-I1),-0.4,el_questro,"El Questro / King River, WA",999.0,"operational, prime 0 deg service since Jun 2025",FCI fire product (status to verify)
+Elektro-L 4,165.8,larouco,"Larouco, Ourense",999.0,operational,none public
+Elektro-L 4,165.8,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,operational,none public
+Elektro-L 4,165.8,oimbra,"Oimbra - A Granxa, Ourense",999.0,operational,none public
+Elektro-L 4,165.8,piodao,"Piodao, Arganil",999.0,operational,none public
+Elektro-L 4,165.8,red_canyon,"Red Canyon, WY",999.0,operational,none public
+Elektro-L 4,165.8,derdara,"Derdara, Chefchaouen",999.0,operational,none public
+Elektro-L 4,165.8,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,operational,none public
+Elektro-L 4,165.8,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,operational,none public
+Elektro-L 4,165.8,ghanzi,"Ghanzi, Botswana",999.0,operational,none public
+Elektro-L 4,165.8,el_questro,"El Questro / King River, WA",46.6,operational,none public
+INSAT-3DS,82.1,larouco,"Larouco, Ourense",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,molezuelas,"Molezuelas de la Carballeda, Zamora",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,oimbra,"Oimbra - A Granxa, Ourense",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,piodao,"Piodao, Arganil",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,red_canyon,"Red Canyon, WY",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,derdara,"Derdara, Chefchaouen",999.0,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",65.5,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,eastern_cape,"Eastern Cape (ZA), cluster 215",68.0,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,ghanzi,"Ghanzi, Botswana",71.7,operational,MOSDAC fire product (registration)
+INSAT-3DS,82.1,el_questro,"El Questro / King River, WA",55.5,operational,MOSDAC fire product (registration)
+GOES-19,-75.2,larouco,"Larouco, Ourense",82.6,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,molezuelas,"Molezuelas de la Carballeda, Zamora",83.2,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,oimbra,"Oimbra - A Granxa, Ourense",82.2,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,piodao,"Piodao, Arganil",81.5,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,red_canyon,"Red Canyon, WY",60.1,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,derdara,"Derdara, Chefchaouen",82.3,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",999.0,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,eastern_cape,"Eastern Cape (ZA), cluster 215",999.0,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,ghanzi,"Ghanzi, Botswana",999.0,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+GOES-19,-75.2,el_questro,"El Questro / King River, WA",999.0,operational (GOES-East since Apr 2025),ABI FDC (NOAA)
+MTG-S1,-3.4,larouco,"Larouco, Ourense",49.0,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,molezuelas,"Molezuelas de la Carballeda, Zamora",48.7,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,oimbra,"Oimbra - A Granxa, Ourense",48.6,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,piodao,"Piodao, Arganil",46.8,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,red_canyon,"Red Canyon, WY",999.0,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,derdara,"Derdara, Chefchaouen",40.8,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,silifke,"Silifke (Kirtil / Balandiz), Mersin, Turkey",57.4,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,eastern_cape,"Eastern Cape (ZA), cluster 215",49.7,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,ghanzi,"Ghanzi, Botswana",39.2,launched 1 Jul 2025 (commissioning),none
+MTG-S1,-3.4,el_questro,"El Questro / King River, WA",999.0,launched 1 Jul 2025 (commissioning),none

@@ -1,0 +1,8 @@
+event,t0_utc,t0_source,t0_platform,t0_sensor,episodes,main_episode_start,excluded_before,human_time_utc,human_kind,human_confidence,t0_minus_human_h,t0_stable_over_gaps
+larouco,2025-08-13T18:40:00Z,SEVIRI (LSA SAF),Meteosat-10,SEVIRI,2,2025-08-13T18:40:00Z,3,2025-08-13T16:55:00Z,official (declared active since),high,1.75,False
+molezuelas,2025-08-10T12:32:00Z,FIRMS VIIRS + MODIS,NOAA-20,VIIRS,2,2025-08-10T12:32:00Z,0,2025-08-10T12:25:00Z,official start (hora de inicio),high,0.12,True
+oimbra,2025-08-12T14:57:00Z,FIRMS VIIRS + MODIS,Aqua,MODIS,3,2025-08-12T14:57:00Z,4,2025-08-12T12:39:00Z,official (Xunta),medium,2.3,False
+piodao,2025-08-13T10:39:23Z,Sentinel-3 SLSTR,Sentinel-3A,SLSTR,2,2025-08-13T04:55:00Z,485,2025-08-13T04:08:00Z,press citing the civil-protection authority,medium,6.52,False
+red_canyon,2025-08-13T23:56:17Z,GOES-19 (ABI FDC),GOES-19,ABI,1,2025-08-13T23:56:17Z,0,2025-08-14T00:09:00Z,official discovery,high,-0.21,True
+derdara,2025-08-12T13:10:00Z,FIRMS VIIRS + MODIS,Suomi-NPP,VIIRS,1,2025-08-12T13:10:00Z,0,2025-08-12T13:00:00Z,press,low,0.17,True
+silifke,2025-08-13T09:52:00Z,FIRMS VIIRS + MODIS,NOAA-20,VIIRS,1,2025-08-13T09:52:00Z,0,2025-08-13T09:45:00Z,press (approximate),medium,0.12,True

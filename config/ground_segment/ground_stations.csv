@@ -1,0 +1,40 @@
+station,lat,lon,operator,satellites,link,station_set,source,level
+Svalbard (SvalSat),78.23,15.41,KSAT,all,stored,month2,Month 2 Table (Ground Segment),Month 2
+Fairbanks (FCDAS),64.98,-147.52,NOAA,all,stored,month2,Month 2 Table (Ground Segment),Month 2
+McMurdo,-77.85,166.67,NASA / NOAA,all,stored,month2,Month 2 Table (Ground Segment),Month 2
+Troll (TrollSat),-72.02,2.53,KSAT,all,stored,month2,Month 2 Table (Ground Segment),Month 2
+Kiruna (Esrange),67.89,21.11,SSC / ESA,all,stored,month2,Month 2 Table (Ground Segment),Month 2
+Svalbard (SvalSat),78.23,15.41,KSAT,Suomi NPP;NOAA-20;NOAA-21;Aqua;Sentinel-3A;Sentinel-3B,stored,real,NOAA OSPO notices 2024; ESA Sentinel-3 data flow; NASA Aqua IDD,official
+McMurdo,-77.85,166.67,NASA / NOAA,NOAA-20;NOAA-21,stored,real,NOAA OSPO notices 2024,official
+Troll (TrollSat),-72.02,2.53,KSAT,FY-3D,stored,real,WMO DBNet slide (FY-3D); backup only for NOAA-20/21 (NOAA OSPO notice Oct 2024) so not modelled for them,secondary
+Poker Flat,65.12,-147.47,NASA EOS Polar Ground Network,Aqua,stored,real,NASA Aqua IDD (2002),official
+Kiruna (Esrange),67.89,21.11,SSC for CMA,FY-3D,stored,real,NSMC LEO system; SSC,official
+Beijing (NSMC),40.0,116.0,CMA,FY-3D,stored,real,NSMC 2021 slides (coordinates approximate),secondary
+Guangzhou,23.0,113.0,CMA,FY-3D,stored,real,NSMC 2021 slides (coordinates approximate),secondary
+Urumqi,43.9,87.6,CMA,FY-3D,stored,real,NSMC 2021 slides (coordinates approximate),secondary
+Jiamusi,46.8,130.4,CMA,FY-3D,stored,real,NSMC 2021 slides (coordinates approximate),secondary
+Svalbard (SvalSat),78.23,15.41,KSAT,Suomi NPP;NOAA-20;NOAA-21;Aqua;Sentinel-3A;Sentinel-3B,stored,real + direct readout,as real,official
+McMurdo,-77.85,166.67,NASA / NOAA,NOAA-20;NOAA-21,stored,real + direct readout,as real,official
+Troll (TrollSat),-72.02,2.53,KSAT,FY-3D,stored,real + direct readout,WMO DBNet slide (FY-3D); backup only for NOAA-20/21 (NOAA OSPO notice Oct 2024) so not modelled for them,secondary
+Poker Flat,65.12,-147.47,NASA EOS Polar Ground Network,Aqua,stored,real + direct readout,as real,official
+Kiruna (Esrange),67.89,21.11,SSC for CMA,FY-3D,stored,real + direct readout,as real,official
+Beijing (NSMC),40.0,116.0,CMA,FY-3D,stored,real + direct readout,as real,secondary
+Guangzhou,23.0,113.0,CMA,FY-3D,stored,real + direct readout,as real,secondary
+Urumqi,43.9,87.6,CMA,FY-3D,stored,real + direct readout,as real,secondary
+Jiamusi,46.8,130.4,CMA,FY-3D,stored,real + direct readout,as real,secondary
+Madison WI (SSEC),43.07,-89.4,UW-Madison SSEC,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,NASA Earthdata FIRMS URT (city coordinates),official / city level
+Hampton VA,37.03,-76.35,NASA,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,NASA Earthdata FIRMS URT (city coordinates),official / city level
+Mayaguez PR,18.2,-67.14,University of Puerto Rico,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,NASA Earthdata FIRMS URT (city coordinates),official / city level
+TDRSS relay,,,NASA,Terra,relay,real,"LANCE: Terra uses two TDRSS contacts per orbit; fixed mean wait, no geometry",official / modelled
+TDRSS relay,,,NASA,Terra,relay,real + direct readout,"LANCE: Terra uses two TDRSS contacts per orbit; fixed mean wait, no geometry",official / modelled
+Alice Springs (GA),-23.76,133.88,Geoscience Australia,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,"Geoscience Australia DEA Hotspots: VIIRS and MODIS telemetry received at Alice Springs, processed in Canberra (Terra: no direct broadcast any more); added 10 Nov 2026",official
+Cuiaba (INPE),-15.55,-56.07,INPE,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,"INPE Programa Queimadas: X/L-band reception stations installed 2017 in Cuiaba and Cachoeira Paulista for the fire programme (MODIS); public focos, stored hourly in BDQueimadas; current VIIRS reception not confirmed; added 10 Nov 2026",partly confirmed
+Cachoeira Paulista (INPE),-22.68,-45.0,INPE,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,as Cuiaba (INPE); added 10 Nov 2026,partly confirmed
+Fairbanks (FCDAS),64.98,-147.52,NOAA,Suomi NPP,stored,real,ground_stations_research.csv (10 Nov 2026): NOAA OSPO notices Jun-Jul 2025: Suomi NPP stored-mission-data downlinks at Fairbanks,official
+Fairbanks (FCDAS),64.98,-147.52,NOAA,Suomi NPP,stored,real + direct readout,ground_stations_research.csv (10 Nov 2026): NOAA OSPO notices Jun-Jul 2025: Suomi NPP stored-mission-data downlinks at Fairbanks,official
+Monterey CA,36.6,-121.87,NASA FIRMS RT partner,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,ground_stations_research.csv (10 Nov 2026): direct readout feeding FIRMS RT,official / city level
+Honolulu HI,21.3,-157.82,University of Hawaii,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,ground_stations_research.csv (10 Nov 2026): direct readout feeding FIRMS RT,official / city level
+Fairbanks AK (UAF GINA),64.86,-147.85,UAF GINA / ASF,Suomi NPP;NOAA-20;NOAA-21;Aqua,direct,real + direct readout,ground_stations_research.csv (10 Nov 2026): direct readout feeding Alaska Fire Service VIIRS hotspots,official
+Perth (Landgate),-32.07,115.84,Landgate WA,Suomi NPP;NOAA-20;Aqua,direct,real + direct readout,ground_stations_research.csv (10 Nov 2026): direct readout feeding MyFireWatch / DEA Hotspots,secondary
+Shadnagar (NRSC),17.03,78.18,NRSC / ISRO,Suomi NPP;NOAA-20;Aqua,direct,real + direct readout,ground_stations_research.csv (10 Nov 2026): direct readout feeding FSI / Bhuvan forest fire alerts,secondary
+Parepare (BRIN),-4.0,119.63,BRIN,Suomi NPP;NOAA-20,direct,real + direct readout,ground_stations_research.csv (10 Nov 2026): direct readout feeding hotspot.brin.go.id,secondary
