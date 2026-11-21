@@ -1,6 +1,7 @@
-"""Contact windows for frozen-baseline stations that were added after the simulator run (10 Nov 2026).
+"""Contact windows for frozen-baseline stations that are not in the simulator run.
 
-The run computed contacts only for its 13 stations. Stations added to the frozen baseline later (direct-readout
+Since the re-run of 21 Nov 2026 the run holds all 22 stations, so without arguments the output is empty.
+The first run (8 Nov 2026) computed contacts only for its 13 stations. Stations added to the frozen baseline later (direct-readout
 stations that feed a public near-real-time fire product: Alice Springs, Hartebeesthoek, Cuiaba, Cachoeira Paulista)
 get their contacts here from the exported satellite positions (ECEF, every 60 s), with the run's 10 deg elevation
 mask. Same columns as the run's 11_access_windows.csv; rise and set are the first and last sample above the mask
@@ -53,6 +54,10 @@ for s in st.itertuples():
         for _, w in g.groupby((g.time_utc.diff() > GAP).cumsum()):
             rows.append(dict(ground_station_name=s.station, satellite_id=sat, rise_utc=w.time_utc.min(), set_utc=w.time_utc.max(),
                              duration_s=(w.time_utc.max() - w.time_utc.min()).total_seconds(), max_elevation_deg=w.elev.max()))
-out = pd.DataFrame(rows)
+COLUMNS = ["ground_station_name", "satellite_id", "rise_utc", "set_utc", "duration_s", "max_elevation_deg"]
+out = pd.DataFrame(rows, columns=COLUMNS)              # header only when the run already holds every station
 out.to_csv(ensure(S1_TABLES) / args.out, index=False, date_format="%Y-%m-%dT%H:%M:%SZ")
-print(out.groupby(["ground_station_name", "satellite_id"]).size().unstack(fill_value=0).to_string())
+if out.empty:
+    print("every station is in the run: no extra contacts")
+else:
+    print(out.groupby(["ground_station_name", "satellite_id"]).size().unstack(fill_value=0).to_string())

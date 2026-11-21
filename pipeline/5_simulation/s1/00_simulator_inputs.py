@@ -1,7 +1,7 @@
 """Step 5: input files for the S1 run of the network simulator.
 
 Writes into the simulator input folder (paths.SIM_INPUTS):
-    s1_tle.txt          three-line TLEs of the seven S1 satellites (Space-Track, epoch 16 Aug 2025)
+    s1_tle.txt          three-line TLEs of the seven S1 satellites as used by the simulator run (Space-Track, 16 Aug 2025)
     s1_sensors.csv      satellite, NORAD id, instrument, swath half-width, direct broadcast, stored-data stations
     stations.csv        every ground station any station set may need (superset), with coordinates, link type,
                         the satellites it serves and the station sets it belongs to
@@ -15,8 +15,9 @@ Usage: python pipeline/5_simulation/s1/00_simulator_inputs.py
 import pandas as pd
 
 from wildfire_central_node_placement.orbits import HALF_SWATH_KM, MIN_ELEVATION_DEG
-from wildfire_central_node_placement.paths import GROUND_STATIONS_FILE, SIM_INPUTS, SPACE_TABLES, ensure
+from wildfire_central_node_placement.paths import GROUND_STATIONS_FILE, SIM_INPUTS, SIM_RUN, SPACE_TABLES, ensure
 from wildfire_central_node_placement.registry import ground_truth, load_registry, selected_events
+from wildfire_central_node_placement.s1 import SAT
 
 OUT = SIM_INPUTS
 
@@ -31,8 +32,15 @@ ensure(OUT)
 reg = load_registry()
 
 # ---- satellites ----
+# The simulator does not accept user TLEs: it fetches the Space-Track TLE of the closest day to 16 Aug 2025 itself.
+# The TLE file and the epochs therefore record the TLEs of the run (01_satellite_elements.csv), not those of the census.
 census = pd.read_csv(SPACE_TABLES / "eo_census.csv")
 s1 = census[census.role == "S1 EO layer"].sort_values("mission")
+run_el = pd.read_csv(SIM_RUN / "01_satellite_elements.csv")
+run_el["mission"] = run_el.satellite_id.map(SAT)
+run_el = run_el.set_index("mission").loc[s1.mission]
+s1 = s1.assign(line1=run_el.tle_line1.values, line2=run_el.tle_line2.values,
+               epoch_utc=pd.to_datetime(run_el.epoch_iso.values).strftime("%Y-%m-%dT%H:%M:%SZ"))
 with open(OUT / "s1_tle.txt", "w") as f:
     for r in s1.itertuples():
         f.write(f"{r.mission}\n{r.line1}\n{r.line2}\n")

@@ -1,3 +1,7 @@
 # Simulation settings read by wildfire_central_node_placement.paths.
-# s1_run_dir: report folder of the S1 run of the NeuralAgent network simulator (8 Nov 2026), relative to code/.
-s1_run_dir: "data/simulator/runs/eo_report_eo_layer_2026-11-08T16-00-25"
+# s1_run_dir: report folder of the S1 run of the NeuralAgent network simulator, relative to code/.
+#   Re-run of 21 Nov 2026: 22 stations, run to 2025-08-17T06:00Z (6 h of ground contacts after the window).
+# s1_previous_run_dir: the first S1 run (8 Nov 2026, 13 stations, to the window end); regression reference of
+#   pipeline/5_simulation/s1/09_run_checks.py.
+s1_run_dir: "data/simulator/runs/s1/eo_report_eo_layer_2026-11-21T10-26-30"
+s1_previous_run_dir: "data/simulator/runs/eo_report_eo_layer_2026-11-08T16-00-25"

@@ -71,8 +71,10 @@ The listings in `data/listings/` are kept as fetched: a new fetch gives the stat
 - T0 (decided 13 Nov 2026): first robust public satellite detection of the event's main episode inside the official
   perimeter (`config/events_registry.yaml` conventions.t0, `src/wildfire_central_node_placement/s0.py`). The FIRMS event summaries still
   report the earlier rule (`t0_until_13nov2026`) as their regression reference.
-- The S1 run of the NeuralAgent network simulator is in `data/simulator/runs/` (set in `config/simulation.yaml`); its
-  inputs are written by `5_simulation/s1/00_simulator_inputs.py`.
+- The S1 run of the NeuralAgent network simulator is in `data/simulator/runs/s1/` (re-run of 21 Nov 2026 with all 22
+  stations, to 6 h after the window; the first run of 8 Nov is kept as the regression reference of
+  `5_simulation/s1/09_run_checks.py`; both set in `config/simulation.yaml`). The simulator fetches its own TLEs, so
+  `s1_tle.txt` records the TLEs of the run. The inputs are written by `5_simulation/s1/00_simulator_inputs.py`.
 - Superseded code, frozen v1 copies and work notes are kept outside the repository, in `code-legacy/`.
 
 ## Not in the public repository

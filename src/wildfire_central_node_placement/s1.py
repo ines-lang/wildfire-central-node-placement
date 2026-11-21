@@ -44,8 +44,9 @@ class S1Run:
         contacts["satellite"] = contacts.satellite_id.map(SAT)
         contacts["station"] = contacts.ground_station_id.map(run_stations())
         extra = S1_TABLES / "extra_access_windows.csv"          # stations added after the run (04_extra_station_contacts.py)
-        if extra.exists():
+        if extra.exists() and extra.stat().st_size > 0:
             e = pd.read_csv(extra, parse_dates=["rise_utc", "set_utc"]).rename(columns={"ground_station_name": "station"})
+            e = e[~e.station.isin(contacts.station)]             # the run's own (interpolated) contacts take precedence
             e["satellite"] = e.satellite_id.map(SAT)
             contacts = pd.concat([contacts, e], ignore_index=True)
         self.contacts = contacts

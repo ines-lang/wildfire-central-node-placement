@@ -31,15 +31,17 @@ pass_h = v.best_observation_utc_h
 ground_h = v.best_ground_utc_h - v.best_observation_utc_h
 fig, ax = plt.subplots(figsize=(8, 3.6))
 y = range(len(v))
-ax.barh(y, pass_h, color="tab:orange", label="waiting for a satellite pass (reference to image)")
+ax.barh(y, pass_h, color="tab:orange", label="waiting for a satellite pass (alert to image)")
 ax.barh(y, ground_h, left=pass_h, color="tab:purple", label="waiting for a ground station (image to first contact)")
-ax.plot(v.s0_ground_utc_h, y, "kD", ms=7, label="S0: first public fire pixel, data on ground")
+# hollow, so the end of the S1 bar stays visible where S0 and S1 agree
+ax.plot(v.s0_ground_utc_h, y, "D", ms=9, mfc="none", mec="black", mew=1.6, zorder=3,
+        label="S0: first public fire pixel, data on ground")
 for i, (h, s, x) in enumerate(zip(v.best_ground_utc_h, v.s0_ground_utc_h, v[["best_ground_utc_h", "s0_ground_utc_h"]].max(axis=1))):
-    ax.text(x + 0.15, i, f"S1 {h:.1f} h / S0 {s:.1f} h", va="center", fontsize=8)
+    ax.text(x + 0.22, i, f"S1 {h:.1f} h / S0 {s:.1f} h", va="center", fontsize=8)
 ax.set_yticks(list(y), v.index.map(NAMES))
 ax.invert_yaxis()
 ax.set_xlim(0, 9.6)
-ax.set_xlabel("hours after the reference time (ignition, discovery or press)")
+ax.set_xlabel("hours after the human alert (official, discovery or press time)")
 ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, fontsize=8, frameon=False)
 ax.grid(axis="x", alpha=0.3)
 fig.tight_layout()
@@ -51,7 +53,7 @@ med = p.groupby("satellite").minutes_to_ground.median().sort_values()
 # colour = how the satellite gets its data down (frozen ground segment)
 DOWNLINK = {"Suomi NPP": "polar", "NOAA-20": "polar", "NOAA-21": "polar", "Aqua": "polar",
             "Terra": "relay", "Sentinel-3A": "svalbard", "Sentinel-3B": "svalbard"}
-STYLE = {"polar": ("tab:blue", "direct readout (US) or polar stations (Svalbard, McMurdo, Poker Flat)"),
+STYLE = {"polar": ("tab:blue", "direct readout (12 stations) or stored-data stations\n(Svalbard, McMurdo, Poker Flat, Fairbanks)"),
          "relay": ("tab:gray", "TDRSS relay, fixed 25 min"),
          "svalbard": ("tab:orange", "Svalbard only, no direct readout")}
 fig, ax = plt.subplots(figsize=(7, 3.6))

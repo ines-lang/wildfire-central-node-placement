@@ -13,6 +13,7 @@ import pandas as pd
 
 from wildfire_central_node_placement.geo import haversine_km as distance_km
 from wildfire_central_node_placement.paths import EVENTS_TABLES, S1_TABLES, ensure
+from wildfire_central_node_placement.registry import load_registry
 from wildfire_central_node_placement.s1 import S1Run
 
 S0 = EVENTS_TABLES
@@ -21,6 +22,9 @@ MATCH_MIN = 15
 
 run = S1Run()
 events, sensors, states, minutes_to_ground = run.events, run.sensors, run.states, run.minutes_to_ground
+# observations only inside the data window; the run continues 6 h after it so that late passes get a ground contact
+WINDOW_END = pd.Timestamp(load_registry()["data_window"]["end_utc"])
+states = states[states.time_utc <= WINDOW_END]
 
 # ---- 1. passes with the event inside the swath ----
 passes = []

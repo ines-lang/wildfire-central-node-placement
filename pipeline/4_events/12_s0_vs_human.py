@@ -4,29 +4,34 @@ For each event: the human alert time (official or press, config/events/reference
 against the public satellite record of the event's main episode (T0 rule, wildfire_central_node_placement.s0.t0_rule):
   image        T0 = first robust public detection (observation time)
   publication  earliest time a public product showed the fire: each robust detection + its delay to publication
-               (GOES 3 min, SEVIRI 17.5 min measured in product_latency.csv; FIRMS 2.5 h and Sentinel-3 3 h
-               from the literature, Month 3; FIRMS within 1 min where a US ultra-real-time station received the pass
-               live), minimum over all detections
+               (GOES 3 min, SEVIRI 17.5 min measured in product_latency.csv; polar: the measured median from
+               observation to published NRT file of that satellite, nrt_latency.csv, 69 to 151 min, decided with the
+               supervisor in Nov 2026 in place of the literature's 2.5 to 3 h; FIRMS within 1 min where a US
+               ultra-real-time station received the pass live), minimum over all detections
 Signed differences in hours: negative = the satellite record was earlier than the human alert.
 Caveat: the human times are of different kinds (official start, declaration, discovery, press).
 
-Inputs: the T0 rule, the S1 run (URT contacts) and S1 s1_t0_variants.csv (run S1 06_t0_variants_and_sweep.py first)
+Inputs: the T0 rule, the S1 run (URT contacts), S1 s1_t0_variants.csv (run S1 06_t0_variants_and_sweep.py first),
+        nrt_latency.csv (2_space_segment/03_nrt_latency.py)
 Output: s0_vs_human.csv, figure s0_vs_human.png
 Usage:  python pipeline/4_events/12_s0_vs_human.py
 """
 import pandas as pd
 
-from wildfire_central_node_placement.paths import EVENTS_FIGURES, EVENTS_TABLES, S1_TABLES
+from wildfire_central_node_placement.paths import EVENTS_FIGURES, EVENTS_TABLES, S1_TABLES, SPACE_TABLES
 from wildfire_central_node_placement.s0 import t0_rule
 from wildfire_central_node_placement.s1 import EVENT_NAMES as NAMES, access_windows, run_stations
 
-PUBLICATION_MIN = {"GOES": 3.0, "SEVIRI": 17.5, "FIRMS": 150.0, "Sentinel-3": 180.0}
+GEO_PUBLICATION_MIN = {"GOES": 3.0, "SEVIRI": 17.5}
+POLAR_PUBLICATION_MIN = (pd.read_csv(SPACE_TABLES / "nrt_latency.csv").set_index("satellite").latency_median_min
+                         .rename({"Suomi NPP": "Suomi-NPP"}))      # observation to published file, per satellite
 
 det, _, t0 = t0_rule()
 det = det[det.robust].copy()
 det["episode_start"] = det.event.map(pd.to_datetime(t0.main_episode_start))
 det = det[det.time_utc >= det.episode_start]
-det["delay_min"] = det.source.map(lambda s: next(v for k, v in PUBLICATION_MIN.items() if k in s))
+det["delay_min"] = [next((v for k, v in GEO_PUBLICATION_MIN.items() if k in s), None) or POLAR_PUBLICATION_MIN[p]
+                    for s, p in zip(det.source, det.platform)]
 # FIRMS ultra-real-time (URT, US): a detection is public within URT_MIN if a URT direct-readout station was in contact
 # with the satellite at the observation time (contacts of the S1 run; Terra has no direct broadcast since May 2024)
 URT_STATIONS = ["Madison WI (SSEC)", "Hampton VA", "Mayaguez PR"]
@@ -54,6 +59,9 @@ out = t0[["human_time_utc", "human_kind", "human_confidence", "t0_utc", "t0_sour
 out["image_minus_human_h"] = ((out.t0_utc - out.human_time_utc).dt.total_seconds() / 3600).round(2)
 out["first_published_utc"] = first_pub.published_utc
 out["first_published_source"] = first_pub.source
+out["first_published_platform"] = first_pub.platform
+out["first_published_sensor"] = first_pub.sensor
+out["first_published_delay_min"] = first_pub.delay_min
 out["published_minus_human_h"] = ((out.first_published_utc - out.human_time_utc).dt.total_seconds() / 3600).round(2)
 out.reset_index().to_csv(EVENTS_TABLES / "s0_vs_human.csv", index=False, date_format="%Y-%m-%dT%H:%M:%SZ")
 pd.set_option("display.width", 220)

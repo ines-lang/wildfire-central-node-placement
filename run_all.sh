@@ -68,10 +68,12 @@ for s in 01_screen_firms 02_criteria 03_overpasses 04_figures 06_s0_first_detect
          08_product_latency 09_nafi_scars 11_t0_rule; do run 4_events/$s.py; done
 
 # ---- 5 simulation and post-processing (S1 run: config/simulation.yaml) ----
+run 5_simulation/s1/09_run_checks.py                                  # raw run against the spec and the previous run
 run 5_simulation/s1/04_extra_station_contacts.py
 run 5_simulation/s1/04_extra_station_contacts.py --stations "$C/config/ground_segment/ground_stations_research.csv" \
   --out research_access_windows.csv
 for s in 01_s1_latency 02_figures 03_ground_sensitivity 05_station_baseline_research 06_t0_variants_and_sweep \
          07_compare_last_week; do run 5_simulation/s1/$s.py; done
 run 4_events/12_s0_vs_human.py                                        # needs the S1 T0 variants
+run 5_simulation/s1/08_pipeline_per_event.py                          # needs s0_vs_human.csv
 echo "ALL OK ($n steps); logs in $LOGS. Check: $PY -m pytest $C/tests"

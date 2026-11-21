@@ -10,16 +10,22 @@ list of the frozen baseline (wildfire_central_node_placement.s1.S1Run, as 01_s1_
     firms_rt         Red Canyon: the FIRMS real-time stations Monterey and Honolulu (NASA Earthdata 2022) receive a
                      direct-broadcast pass if they see the satellite (elevation >= 10 deg) at the observation time.
                      Their data arrive after the pass, i.e. a few minutes; counted as 0 min here.
+    ears             the EUMETSAT EARS stations (Maspalomas, Lannion, Athens, Kangerlussuaq) count as direct readout for
+                     the VIIRS satellites they receive (ground_stations_research.csv). They feed no public fire product,
+                     so the baseline excludes them; EARS relays the data within 10 to 30 min (EUMETSAT 2025), counted
+                     as 0 min here. Contacts: research_access_windows.csv (04_extra_station_contacts.py --stations ...)
 Outputs: ground_sensitivity_satellites.csv  median and maximum wait per satellite and case
          ground_sensitivity_events.csv      S1 answer and S0 data on ground (h after reference) per event
+         ground_sensitivity_ears.csv        ears case: wait over the passes of the non-US events (median, P90, max, share
+                                            received live), baseline against ears
 Usage:   python pipeline/5_simulation/s1/03_ground_sensitivity.py   (after 01_s1_latency.py)
 """
 import numpy as np
 import pandas as pd
 
 from wildfire_central_node_placement.geo import haversine_km as distance_km
-from wildfire_central_node_placement.paths import S1_TABLES
-from wildfire_central_node_placement.s1 import S1Run
+from wildfire_central_node_placement.paths import GROUND_STATIONS_RESEARCH_FILE, S1_TABLES
+from wildfire_central_node_placement.s1 import SAT, S1Run
 
 run = S1Run()
 
@@ -28,6 +34,8 @@ JPSS = ["Suomi NPP", "NOAA-20", "NOAA-21"]
 RT_STATIONS = {"Monterey": (36.6, -121.9), "Honolulu": (21.3, -157.8)}
 ALTITUDE_KM = {"Terra": 705, "Aqua": 705}                       # JPSS about 830 km
 EARTH_RADIUS_KM = 6371.0
+EARS = ["Maspalomas (INTA)", "Lannion (Meteo-France CMS)", "Athens (HNMS)", "Kangerlussuaq (DMI)"]
+US_EVENTS = ["red_canyon"]
 
 passes = pd.read_csv(S1_TABLES / "s1_passes.csv", parse_dates=["observation_utc"])
 val = pd.read_csv(S1_TABLES / "s1_validation.csv", parse_dates=["s0_first_detection_utc"]).set_index("event")
@@ -63,12 +71,27 @@ def with_firms_rt(w):
     return w
 
 
+def with_ears(w):
+    research = pd.read_csv(GROUND_STATIONS_RESEARCH_FILE).set_index("station")
+    serves = {st: set(research.loc[st, "satellites"].split(";")) for st in EARS}
+    c = pd.read_csv(S1_TABLES / "research_access_windows.csv", parse_dates=["rise_utc", "set_utc"])
+    c = c[c.ground_station_name.isin(EARS)].assign(satellite=lambda d: d.satellite_id.map(SAT))
+    c = c[[sat in serves[st] for st, sat in zip(c.ground_station_name, c.satellite)]]
+    w = w.copy()
+    for i, p in passes.iterrows():
+        q = c[c.satellite == p.satellite]
+        if ((q.rise_utc <= p.observation_utc) & (q.set_utc >= p.observation_utc)).any():
+            w[i] = 0
+    return w
+
+
 baseline = waits({})
 cases = {"baseline": baseline,
          "jpss_backups": waits({s: base[s] + ";Fairbanks (FCDAS);Troll (TrollSat)" for s in JPSS}),
          "snpp_mcmurdo": waits({"Suomi NPP": "Svalbard (SvalSat);McMurdo"}),
          "s3_any_polar": waits({"Sentinel-3A": POLAR, "Sentinel-3B": POLAR}),
-         "firms_rt": with_firms_rt(baseline)}
+         "firms_rt": with_firms_rt(baseline),
+         "ears": with_ears(baseline)}
 
 sat_rows, ev_rows = [], []
 for name, w in cases.items():
@@ -83,10 +106,19 @@ for name, w in cases.items():
         ev_rows.append(dict(case=name, event=ev, s1_answer_h=h(q[q.hours_from_reference >= 0].ground.min()),
                             s0_on_ground_h=h(s0_img + pd.Timedelta(minutes=s0_pass.wait))))
 
+non_us = ~passes.event.isin(US_EVENTS)
+ears_df = pd.DataFrame([dict(case=name, passes=int(non_us.sum()), median_min=round(np.nanmedian(w[non_us]), 1),
+                             p90_min=round(np.nanpercentile(w[non_us], 90), 1), max_min=round(np.nanmax(w[non_us]), 1),
+                             share_live=round((w[non_us] == 0).mean(), 2))
+                        for name, w in [("baseline", baseline), ("ears", cases["ears"])]])
+ears_df.to_csv(S1_TABLES / "ground_sensitivity_ears.csv", index=False)
+
 sat_df, ev_df = pd.DataFrame(sat_rows), pd.DataFrame(ev_rows)
 sat_df.to_csv(S1_TABLES / "ground_sensitivity_satellites.csv", index=False)
 ev_df.to_csv(S1_TABLES / "ground_sensitivity_events.csv", index=False)
 print(sat_df.pivot(index="satellite", columns="case", values=["median_min", "max_min"]).to_string())
+print()
+print(ears_df.to_string(index=False))
 print()
 print(ev_df.assign(v=ev_df.s1_answer_h.astype(str) + " / " + ev_df.s0_on_ground_h.astype(str))
       .pivot(index="event", columns="case", values="v").to_string())

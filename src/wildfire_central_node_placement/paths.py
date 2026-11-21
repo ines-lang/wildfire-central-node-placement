@@ -80,12 +80,13 @@ S1_TABLES = RESULTS / "5_simulation" / "s1" / "tables"
 S1_FIGURES = RESULTS / "5_simulation" / "s1" / "figures"
 
 
-def _sim_run():
+def _sim_run(key="s1_run_dir"):
     with open(SIMULATION_CONFIG, encoding="utf-8") as f:
-        return CODE / yaml.safe_load(f)["s1_run_dir"]
+        return CODE / yaml.safe_load(f)[key]
 
 
 SIM_RUN = _sim_run()                                           # the simulator report folder of the S1 run
+SIM_RUN_PREVIOUS = _sim_run("s1_previous_run_dir")             # the first S1 run, regression reference
 
 
 def ensure(path):
